@@ -1,0 +1,75 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;           /* white */
+    --foreground: 0 0% 7%;             /* very dark grey, close to black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 0 0% 0%;                /* black */
+    --primary-foreground: 0 0% 100%;   /* white */
+
+    --secondary: 0 0% 30%;             /* dark grey */
+    --secondary-foreground: 0 0% 98%;  /* near white */
+
+    --muted: 0 0% 93%;                 /* light grey */
+    --muted-foreground: 0 0% 45%;      /* grey */
+
+    --accent: 0 0% 85%;                /* very light grey */
+    --accent-foreground: 0 0% 15%;     /* medium grey */
+
+    --destructive: 0 78% 57%;          /* red for destructive actions */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 80%;                /* mid-grey border */
+    --input: 0 0% 80%;                 /* mid-grey input */
+    --ring: 0 0% 7%;
+
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+/* Animation Utilities */
+.story-link {
+  @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+}
+
+.hover-scale {
+  @apply transition-transform duration-200 hover:scale-105;
+}
+
+.card-hover {
+  @apply hover:shadow-2xl hover:scale-[1.025] transition-transform duration-200;
+}
